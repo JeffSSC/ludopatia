@@ -156,7 +156,7 @@ export default function App() {
   };
 
   return (
-    <div className="h-screen bg-[#0A0A0A] text-white font-sans selection:bg-[#00FF00] selection:text-black overflow-hidden flex flex-col p-0 m-0 relative">
+    <div className="min-h-screen bg-[#0A0A0A] text-white font-sans selection:bg-[#00FF00] selection:text-black overflow-x-hidden flex flex-col p-0 m-0 relative">
       <style>
         {`
           @keyframes pulse-green {
@@ -206,7 +206,7 @@ export default function App() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto w-full px-8 flex-grow flex items-center justify-center relative z-10 min-h-0 overflow-hidden">
+      <main className="max-w-7xl mx-auto w-full px-4 sm:px-8 py-8 md:py-12 flex-grow flex items-center justify-center relative z-10 min-h-0 overflow-x-hidden">
         
         <AnimatePresence mode="wait">
           {!aiResponse ? (
@@ -218,7 +218,7 @@ export default function App() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full"
             >
               {/* Left Column: Token Selection */}
-              <div className="flex flex-col justify-center h-full max-w-lg">
+              <div className="flex flex-col justify-center max-w-lg mx-auto lg:mx-0 w-full">
                 <motion.div 
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -286,7 +286,7 @@ export default function App() {
               </div>
 
               {/* Right Column: Roulette */}
-              <div className="flex flex-col items-center justify-center h-full relative">
+              <div className="flex flex-col items-center justify-center relative w-full mx-auto lg:mt-0">
                 <div className={`flex flex-col items-center gap-8 md:gap-12 transition-all duration-700 ${aiResponse ? 'opacity-20 blur-sm scale-90 pointer-events-none' : 'opacity-100 scale-100'}`}>
                   <div id="roulette-container" className="relative p-3 rounded-full border-4 border-white/5 bg-black/40 shadow-[0_0_60px_rgba(0,0,0,0.6)] overflow-hidden flex items-center justify-center">
                     <Wheel
